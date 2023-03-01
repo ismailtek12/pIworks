@@ -1,0 +1,8 @@
+urls=["<url>https://xcd32112.smart_meter.com</url>","<url>http://cartcurt112.smart_meter.com</url>"] #assume to this list has stats_access_link values
+new_urls=[]
+for url in urls:
+    if "https" in url:
+        new_urls.append(url[13:len(url)-6])
+    else:
+        new_urls.append(url[12:len(url)-6])
+new_urls
