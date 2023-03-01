@@ -1,0 +1,4 @@
+#q3
+#1/6/2021
+df["date"]=pd.to_datetime(df["date"])
+df[df["date"]=="1/6/2021"]["daily_vaccinations"].sum()

@@ -1,0 +1,12 @@
+q2=pd.read_csv("C:/Users/ismai/Downloads/country_vaccination_stats.csv")
+#q1
+min_vac=q2.groupby("country")[["daily_vaccinations"]].min().reset_index()
+min_vac["daily_vaccinations"]=min_vac["daily_vaccinations"].replace(np.nan,0)
+null_index=q2[q2["daily_vaccinations"].isnull()==True].index
+values=[]
+for i in null_index:
+    values.append(int(min_vac[min_vac["country"]==q2.iloc[i,0]]["daily_vaccinations"].values))
+count=0
+for i in null_index:
+    q2.iloc[i,2]=values[count]
+    count+=1

@@ -1,0 +1,2 @@
+#q2
+df.groupby("country")[["daily_vaccinations"]].median().sort_values(by="daily_vaccinations",ascending=False)[:3]

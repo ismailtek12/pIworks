@@ -1,0 +1,2 @@
+#q4
+query="select daily_vaccinations, coalesce(daily_vaccinations,(select median(daily_vaccinations) from df group by country)) from df"
